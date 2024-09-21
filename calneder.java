@@ -384,16 +384,16 @@ public class calneder {
     // I have created all the functions for us
     public static void main(String[] args) {
         month();
-        /*
-         * System.out.println();
-         * System.out.println("Do You Want to Continue........");
-         * System.out.println("1. Y or 2. N");
-         * choice = sc.next();
-         * if (choice.equals("Y") || choice.equals("y")) {
-         * month();
-         * } else {
-         * System.exit(0);
-         * }
-         */
+        do {
+            System.out.println();
+            System.out.println("Do You Want to Continue........");
+            System.out.println("1. Y or 2. N");
+            choice = sc.next();
+            if (choice.equals("Y") || choice.equals("y")) {
+                month();
+            } else {
+                System.exit(0);
+            }
+        } while (choice.equals("n") || choice.equals("N"));
     }
 }
