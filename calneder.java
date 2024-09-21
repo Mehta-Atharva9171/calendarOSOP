@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class calneder {
     private static int month;
     private static int days;
-    // private static int choice;
+    private static String choice;
     private static Scanner sc = new Scanner(System.in);
 
     public static void month() {
@@ -155,5 +155,14 @@ public class calneder {
     // I have created all the functions for us
     public static void main(String[] args) {
         month();
+        System.out.println();
+        System.out.println("Do You Want to Continue........");
+        System.out.println("1. Y or 2. N");
+        choice = sc.next();
+        if (choice == "Y" || choice == "y") {
+            month();
+        } else {
+            System.exit(0);
+        }
     }
 }
