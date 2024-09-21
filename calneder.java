@@ -45,29 +45,75 @@ public class calneder {
                 }
             }
             case 2 -> {
+                int i = 1;
                 System.out.println("Sun Mon Tue Wed Thu Fri Sat");
-                int offSet = (2 - 1) % 7;
-                for (int i = 1; i <= day1; i++) {
-                    if (i == 1) {
-                        System.out.printf("  ");
-                        for (int j = 0; j < offSet; j++) {
-                            System.out.printf("  ");
-                        }
+                System.out.printf("%6d", i);
+                for (int j = 2; j <= day1; j++) {
+                    System.out.printf("%4d", j);
+                    if (j == 6 || j == 13 || j == 20 || j == 27) {
+                        System.out.println();
                     }
                 }
             }
             case 3 -> {
-
+                int i = 1;
+                System.out.println("Sun Mon Tue Wed Thu Fri Sat");
+                System.out.printf("%10d", i);
+                for (int j = 2; j <= day1; j++) {
+                    System.out.printf("%4d", j);
+                    if (j == 5 || j == 12 || j == 19 || j == 26) {
+                        System.out.println();
+                    }
+                }
             }
             case 4 -> {
+                int i = 1;
+                System.out.println("Sun Mon Tue Wed Thu Fri Sat");
+                System.out.printf("%14d", i);
+                for (int j = 2; j <= day1; j++) {
+                    System.out.printf("%4d", j);
+                    if (j == 4 || j == 11 | j == 18 || j == 25) {
+                        System.out.println();
+                    }
+                }
             }
             case 5 -> {
+                int i = 1;
+                System.out.println("Sun Mon Tue Wed Thu Fri Sat");
+                System.out.printf("%18d", i);
+                for (int j = 2; j <= day1; j++) {
+                    System.out.printf("%4d", j);
+                    if (j == 3 || j == 10 || j == 17 || j == 24) {
+                        System.out.println();
+                    }
+                }
             }
             case 6 -> {
+                int i = 1;
+                System.out.println("Sun Mon Tue Wed Thu Fri Sat");
+                System.out.printf("%22d", i);
+                for (int j = 2; j <= day1; j++) {
+                    System.out.printf("%4d", j);
+                    if (j == 2 || j == 9 || j == 16 || j == 23 || j == 30) {
+                        System.out.println();
+                    }
+                }
             }
             case 7 -> {
+                int i = 1;
+                System.out.println("Sun Mon Tue Wed Thu Fri Sat");
+                System.out.printf("%26d", i);
+                System.out.println();
+                for (int j = 2; j <= day1; j++) {
+                    System.out.printf("%4d", j);
+                    if (j == 8 || j == 15 || j == 22 || j == 29) {
+                        System.out.println();
+                    }
+                }
+
             }
             default -> {
+                System.out.println("Please enter a valid response");
             }
         }
     }
