@@ -5,7 +5,7 @@ public class calneder {
     private static int month;
     private static int days;
     private static String choice;
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void month() {
         System.out.println("----- MENU -----");
