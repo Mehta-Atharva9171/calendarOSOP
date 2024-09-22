@@ -8,8 +8,8 @@ public class RockPaperScissor {
     private static int comp;
     private static String userChoice = new String();
 
-    private static Scanner sc = new Scanner(System.in);
-    private static Random rand = new Random();
+    private static final Scanner sc = new Scanner(System.in);
+    private static final Random rand = new Random();
 
     public static void rules() {
         System.out.println("Rock Paper Scissor Game");
