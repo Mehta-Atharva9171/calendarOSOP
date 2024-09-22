@@ -6,6 +6,7 @@ public class RockPaperScissor {
 
     private static int choice;
     private static int comp;
+    private static String userChoice = new String();
 
     private static Scanner sc = new Scanner(System.in);
     private static Random rand = new Random();
@@ -23,10 +24,22 @@ public class RockPaperScissor {
     public static void choice() {
         System.out.println("Enter your choice");
         choice = sc.nextInt();
-        if (choice == 1 || choice == 2 || choice == 3) {
-            vaildChoice();
-        } else {
-            System.out.println("Invalid choice");
+        switch (choice) {
+            case 1 -> {
+                System.out.println("You chose Rock");
+                vaildChoice();
+            }
+            case 2 -> {
+                System.out.println("You chose Scissor");
+                vaildChoice();
+            }
+            case 3 -> {
+                System.out.println("You chose Paper");
+                vaildChoice();
+            }
+            default -> {
+                System.out.println("Invalid choice");
+            }
         }
     }
 
@@ -57,18 +70,60 @@ public class RockPaperScissor {
         }
     }
 
+    public static void tie() {
+        System.out.println("Your Choice = " + choice + " Computer choice = " + comp);
+        System.out.println("It's a tie");
+    }
+
+    public static void rockPaper() {
+        System.out.println("Your Choice = " + choice + " Computer choice = " + comp);
+        System.out.println("Paper beats Rock");
+        System.out.println("You Win");
+    }
+
+    public static void paperScissor() {
+        System.out.println("Your Choice = " + choice + " Computer choice = " + comp);
+        System.out.println("Scissors beats Paper");
+        System.out.println("Computer Wins");
+    }
+
+    public static void rockScissor() {
+        System.out.println("Your Choice = " + choice + " Computer choice = " + comp);
+        System.out.println("Rock beats Scissor");
+        System.out.println("You Win");
+    }
+
     public static void comparision() {
         if (choice == comp) {
-            System.out.println("Its a tie");
-        }
-        if (choice == 1 && comp == 2) {
-            System.out.println("Your Choice = " + choice + " Computer choice = " + comp);
-            System.out.println("Paper beats Rock");
+            tie();
+        } else {
+            if ((choice == 1 && comp == 2) || (comp == 2 && choice == 1)) {
+                rockPaper();
+                return;
+            }
+
+            if ((choice == 2 && comp == 3) || (comp == 3 && choice == 2)) {
+                paperScissor();
+            }
+
+            if ((choice == 1 && comp == 3) || (comp == 3 && choice == 1)) {
+                rockScissor();
+            } else {
+                System.out.println("Computer Wins");
+            }
         }
     }
 
     public static void main(String[] args) {
-        rules();
-        System.out.println("choice" + choice);
+        do {
+            rules();
+            System.out.println();
+            System.out.println("Do you want to continue...");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            userChoice = sc.next();
+        } while ((userChoice.equals("Yes")) || (userChoice.equals("yes")) || (userChoice.equals("Y"))
+                || (userChoice.equals("y")));
+        sc.close();
     }
 }
