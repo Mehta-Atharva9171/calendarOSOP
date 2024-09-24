@@ -28,17 +28,21 @@ public class RockPaperScissor {
             case 1 -> {
                 System.out.println("You chose Rock");
                 vaildChoice();
+                break;
             }
             case 2 -> {
                 System.out.println("You chose Scissor");
                 vaildChoice();
+                break;
             }
             case 3 -> {
                 System.out.println("You chose Paper");
                 vaildChoice();
+                break;
             }
             default -> {
                 System.out.println("Invalid choice");
+                break;
             }
         }
     }
@@ -55,17 +59,25 @@ public class RockPaperScissor {
     public static void vaildChoice() {
         comp = rand.nextInt(3);
         switch (comp) {
+            case 0 -> {
+                System.out.println("Computer chose Rock");
+                comparision();
+                break;
+            }
             case 1 -> {
                 System.out.println("Computer chose Rock");
                 comparision();
+                break;
             }
             case 2 -> {
                 System.out.println("Computer chose Paper");
                 comparision();
+                break;
             }
             case 3 -> {
                 System.out.println("Computer chose Scissor");
                 comparision();
+                break;
             }
         }
     }
@@ -96,6 +108,7 @@ public class RockPaperScissor {
     public static void comparision() {
         if (choice == comp) {
             tie();
+            return;
         } else {
             if ((choice == 1 && comp == 2) || (comp == 2 && choice == 1)) {
                 rockPaper();
@@ -104,10 +117,12 @@ public class RockPaperScissor {
 
             if ((choice == 2 && comp == 3) || (comp == 3 && choice == 2)) {
                 paperScissor();
+                return;
             }
 
             if ((choice == 1 && comp == 3) || (comp == 3 && choice == 1)) {
                 rockScissor();
+                return;
             } else {
                 System.out.println("Computer Wins");
             }
